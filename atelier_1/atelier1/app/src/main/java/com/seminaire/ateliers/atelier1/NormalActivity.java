@@ -13,4 +13,9 @@ public class NormalActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         super.setContentView(R.layout.activity_normal);
     }
+
+    @Override
+    protected boolean useNavigationMenu() {
+        return false;
+    }
 }
