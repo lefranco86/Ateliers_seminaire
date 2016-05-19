@@ -1,8 +1,7 @@
 package com.seminaire.ateliers.atelier1;
 
-import android.os.Bundle;
 import android.support.annotation.LayoutRes;
-import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.content.res.ResourcesCompat;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -18,23 +17,17 @@ import android.widget.FrameLayout;
 public class BaseActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    DrawerLayout activityContainer;
-    FrameLayout activityContent;
-    Toolbar mainToolbar;
-    NavigationView navigationView;
-
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        activityContainer = (DrawerLayout) getLayoutInflater().inflate(R.layout.activity_base, null);
-    }
+    protected DrawerLayout activityContainer;
+    protected FrameLayout activityContent;
+    protected Toolbar mainToolbar;
+    protected NavigationView navigationView;
 
     @Override
     public void setContentView(@LayoutRes int layoutResID) {
+        activityContainer = (DrawerLayout) getLayoutInflater().inflate(R.layout.activity_base, null);
         activityContent = (FrameLayout) activityContainer.findViewById(R.id.activity_content);
         getLayoutInflater().inflate(layoutResID, activityContent, true);
         super.setContentView(activityContainer);
-
         setUpToolbar();
         setUpNavigationView();
     }
@@ -66,7 +59,7 @@ public class BaseActivity extends AppCompatActivity
             actionBarDrawerToggle.syncState();
         } else if (useToolbar() && getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setHomeAsUpIndicator(ResourcesCompat.getDrawable(getResources(), R.drawable.ic_menu_manage, null));
+            getSupportActionBar().setHomeAsUpIndicator(ResourcesCompat.getDrawable(getResources(), R.drawable.ic_home, null));
         }
     }
 
@@ -76,6 +69,7 @@ public class BaseActivity extends AppCompatActivity
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
+        Snackbar.make(activityContent, item.getTitle(), Snackbar.LENGTH_LONG).show();
         activityContainer.closeDrawer(GravityCompat.START);
         return onOptionsItemSelected(item);
     }
