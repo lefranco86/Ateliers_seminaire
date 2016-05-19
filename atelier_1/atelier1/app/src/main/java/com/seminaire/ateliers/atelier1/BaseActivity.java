@@ -21,6 +21,7 @@ public class BaseActivity extends AppCompatActivity
     DrawerLayout activityContainer;
     FrameLayout activityContent;
     Toolbar mainToolbar;
+    NavigationView navigationView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -53,8 +54,10 @@ public class BaseActivity extends AppCompatActivity
     }
 
     protected void setUpNavigationView() {
-        NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
-        navigationView.setNavigationItemSelectedListener(this);
+        navigationView = (NavigationView) findViewById(R.id.navigation_view);
+        if (navigationView != null) {
+            navigationView.setNavigationItemSelectedListener(this);
+        }
 
         if (useHamburgerMenu()) {
             ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, activityContainer, mainToolbar,
