@@ -8,7 +8,7 @@ problème majeur que j'ai rencontré avec les images et comment j'ai fait pour l
 Je monterais par le fait même comment utiliser le Vector Asset d'Android Studio. J'expliquerais 
 aussi comment faire une activité qui pourra gérer la barre d'outils et le menu de navigation 
 dans toutes l'application. Finalement, je montrerais comment faire pour intégrer une librairie 
-dans un projet Android.
+et un jar dans un projet Android.
 
 ### Date de création : 16 mai 2016
 ### Auteure : Véronique Lefrançois
@@ -19,5 +19,5 @@ dans un projet Android.
 ## Atelier 2 : BaseActivity
  Création d'une activité de base pour gérer les barres d'outils et le menu de navigation
  
-## Atelier 3 : Intégration d'une librairie
- Intégration de deux librairies afin d'apprendre deux façons différentes d'ajouter une librairie
+## Atelier 3 : Intégration d'une librairie et d'un jar
+ Intégration d'une librairie et d'un jar
