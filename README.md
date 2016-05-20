@@ -1,6 +1,6 @@
 # Ateliers séminaire
  Ce projet a été réalisé dans le cadre du cours 420-650-AL, Séminaire de sujets avancés en informatique.
-## Android - Quelques pièges à éviter
+## Android - Quelques conseils et pièges à éviter lors du développement d'une application Android
 Je commencerais par vous expliquez quel IDE est meilleur pour faire du développement Android. 
 Ensuite, j'expliquerais un problème que j'ai rencontré en stage avec la JDK 8 et comment le régler 
 en plus d'expliquer pourquoi je conseille d'utiliser la JDK 7. Je présenterais ensuite un autre 
