@@ -19,5 +19,5 @@ dans un projet Android.
 ## Atelier 2 : BaseActivity
  Création d'une activité de base pour gérer les barres d'outils et le menu de navigation
  
-## Atelier 3 : 
- Création d'une activité de base pour gérer les barres d'outils et le menu de navigation
+## Atelier 3 : Intégration d'une librairie
+ Intégration de deux librairies afin d'apprendre deux façons différentes d'ajouter une librairie
