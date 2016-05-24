@@ -88,6 +88,10 @@ public class BaseActivity extends AppCompatActivity
     protected void setUpNavigationView() {
         navigationView = (NavigationView) findViewById(R.id.navigation_view);
 
+        if(!useNavigationMenu()) {
+            activityContainer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+        }
+
         if (useNavigationMenu() && navigationView != null) {
             navigationView.setNavigationItemSelectedListener(this);
             ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, activityContainer, mainToolbar,
@@ -97,8 +101,8 @@ public class BaseActivity extends AppCompatActivity
         } else if (useToolbar() && getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setHomeAsUpIndicator(ResourcesCompat.getDrawable(getResources(), R.drawable.ic_home, null));
-            activityContainer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
         }
+
     }
 
     /**

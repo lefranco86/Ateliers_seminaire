@@ -75,19 +75,22 @@ public class BaseActivity extends AppCompatActivity
 
     /**
      * 1. On instancie d'abord la vue pour le menu de navigation
-     * 2. Si l'activité en cours utilise le menu de navigation,
+     * 2. Si l'activité en cours n'utilise pas le menu de navigation, on empêche le mouvement
+     *    dans l'écran (causé par le fait que le conteneur est un DrawerLayout)
+     * 3. Si l'activité en cours utilise le menu de navigation,
      *    on ajoute l'activité en tant que listener pour gérer les clics (voir plus loin...),
      *    on crée le bouton "hamburger" (ActionBarDrawerToggle) qui permettra de l'ouvrir,
      *    on ajoute le bouton "hamburger" en tant que listener du conteneur de l'activité,
      *    et le dernier appel, syncState, sert tout simplement à gérer l'ouverture et la
      *    fermeture du menu de navigation et donc changer les images (hamburger vs arrow)
-     * 3. Sinon, vous pouvez un peu faire ce que vous voulez, mais si vous ne voulez pas que
-     *    le menu de navigation apparaisse avec un mouvement dans l'écran (causé par le fait que
-     *    le conteneur est un DrawerLayout),  il faut absolument avoir la dernière ligne qui
-     *    permet de le garder fermer en tout temps.
+     * 3. Sinon si on utilise tout de même la barre d'outils, on affiche un bouton "home".
      */
     protected void setUpNavigationView() {
         navigationView = (NavigationView) findViewById(R.id.navigation_view);
+
+        if(!useNavigationMenu()) {
+            activityContainer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+        }
 
         if (useNavigationMenu() && navigationView != null) {
             navigationView.setNavigationItemSelectedListener(this);
@@ -95,11 +98,16 @@ public class BaseActivity extends AppCompatActivity
                     R.string.navigation_drawer_open, R.string.navigation_drawer_close);
             activityContainer.addDrawerListener(actionBarDrawerToggle);
             actionBarDrawerToggle.syncState();
-        } else if (useToolbar() && getSupportActionBar() != null) {
+        } else if (useToolbar()) {
+            addHomeButtonToToolbar();
+        }
+    }
+
+    protected void addHomeButtonToToolbar() {
+        if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            //TODO
-            //getSupportActionBar().setHomeAsUpIndicator(ResourcesCompat.getDrawable(getResources(), R.drawable.ic_home, null));
-            activityContainer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+            //TODO Ajouter l'image créée à l'atelier 1
+            //getSupportActionBar().setHomeAsUpIndicator(ResourcesCompat.getDrawable(getResources(), R.drawable.monImageSVG, null));
         }
     }
 
