@@ -6,10 +6,13 @@
 #### Auteure : Véronique Lefrançois
  
 ## Atelier 1 : Vector Asset Studio
- Démonstration de l'utilisation du Vector Asset d'Android Studio
+ Démonstration de l'utilisation du Vector Asset Studio d'Android Studio
  
 ## Atelier 2 : BaseActivity
- Création d'une activité de base pour gérer les barres d'outils et le menu de navigation
+ Explication et utilisation du gabarit pour gérer la barre d'outils et le menu de navigation
  
 ## Atelier 3 : Intégration de librairies
  Intégration de librairies
+ [ZXing-Android-Embedded](https://github.com/journeyapps/zxing-android-embedded)
+ myJar7.jar
+ myJar8.jar
