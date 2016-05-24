@@ -1,4 +1,4 @@
-package com.seminaire.ateliers.atelier1;
+package com.semaine.ateliers.atelier1;
 
 import org.junit.Test;
 

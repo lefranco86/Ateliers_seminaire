@@ -1,4 +1,4 @@
-package com.seminaire.ateliers.atelier1;
+package com.seminaire.ateliers.atelier2;
 
 import android.support.annotation.LayoutRes;
 import android.support.design.widget.Snackbar;
@@ -147,7 +147,8 @@ public class BaseActivity extends AppCompatActivity
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        return item.getItemId() == R.id.action_settings || super.onOptionsItemSelected(item);
+        Snackbar.make(activityContent, item.getTitle(), Snackbar.LENGTH_LONG).show();
+        return super.onOptionsItemSelected(item);
     }
 
 }

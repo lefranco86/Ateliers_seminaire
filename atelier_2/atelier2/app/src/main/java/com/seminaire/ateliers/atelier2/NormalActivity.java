@@ -1,4 +1,4 @@
-package com.seminaire.ateliers.atelier1;
+package com.seminaire.ateliers.atelier2;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -14,8 +14,4 @@ public class NormalActivity extends BaseActivity {
         super.setContentView(R.layout.activity_normal);
     }
 
-    @Override
-    protected boolean useNavigationMenu() {
-        return false;
-    }
 }
